@@ -4,7 +4,7 @@ module.exports = {
     'src/assets/projects/**'
   ],
   project: [
-    'projects/styles/**',
+    'styles/**',
     'projects/projectName/pages/**',
     'assets/*',
     'assets/js/**',

@@ -3,15 +3,15 @@ module.exports = {
     'src/projects/**',
     'src/assets/projects/**'
   ],
-  project: [
+  project: [ // template/src
     'styles/**',
     'projects/projectName/pages/**',
     'assets/*',
     'assets/js/**',
     'assets/css/**'
   ],
-  page: [
-      '/projectName/sprites/**',
-      '/projectName/*'
+  page: [ // template/src/projects/projectName
+    'sprites/**',
+    '*'
   ]
 };

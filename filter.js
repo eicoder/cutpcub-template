@@ -12,7 +12,7 @@ module.exports = {
     'assets/css/**'
   ],
   page: [ // template/src/projects/projectName
-    '/projectName/sprites/**',
-    '/projectName/*'
+    'sprites/**',
+    '*'
   ]
 };

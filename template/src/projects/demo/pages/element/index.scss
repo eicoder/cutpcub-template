@@ -1,0 +1,12 @@
+@import "../../common";
+
+.demo-btn {
+  color: $color-red;
+}
+.demo-sp-shell {
+  display: flex;
+  .demo-sp {
+    width: 200px;
+    height: 200px;
+  }
+}

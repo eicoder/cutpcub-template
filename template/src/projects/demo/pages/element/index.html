@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>element</title>
+  <link href="./static/lib/element/theme-chalk/index.css" rel="stylesheet">
+  <script src="./static/lib/vue/vue.min.js"></script>
+  <script src="./static/lib/element/index.js"></script>
+</head>
+<body>
+<div id="app">
+  <img src="~@/assets/images/baby.png">
+  <el-button @click="visible = true" class="demo-btn">
+    <i class="ant ant-arrawsalt"></i>
+    Button
+  </el-button>
+  <el-dialog :visible.sync="visible" title="Hello world">
+    <p>Try Element！</p>
+    <div class="demo-sp-shell">
+      <div class="demo-sp icon-sp-1"></div>
+      <div class="demo-sp icon-sp-3"></div>
+    </div>
+  </el-dialog>
+</div>
+</body>
+</html>

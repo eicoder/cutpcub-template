@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const {entry, plugins, output, rules} = require('./utils/multipage-helper')();
+const helper = require('./utils/helper');
 const utils = require('./utils');
 // const config = require('./config');
 
@@ -11,8 +11,8 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry,
-  output,
+  entry: helper.entries(),
+  output: helper.output(),
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
@@ -26,14 +26,24 @@ module.exports = {
           use: [{
             loader: "babel-loader"
           }],
-          include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+          include: [resolve('src'), resolve('node_modules/webpack-dev-server/client')]
         },
         {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           loader: 'file-loader',
           exclude: [resolve('src/projects/**/*.png')],
           options: {
-            name: utils.assetsPath('img/[name].[ext]')
+            name: utils.assetsPath('img/[name].[ext]'),
+            esModule: false
+          }
+        },
+        {
+          test: /\.(html)$/,
+          use: {
+            loader: 'html-loader',
+            options: {
+              attrs: ['img:src', 'img:data-src', 'audio:src']
+            }
           }
         },
         {
@@ -51,8 +61,8 @@ module.exports = {
             name: utils.assetsPath('fonts/[name].[ext]')
           }
         },
-        ...rules
+        helper.cssRules()
     ]
   },
-  plugins: [...plugins]
+  plugins: [...helper.htmls(), ...helper.purifyCssPlugin(), helper.spritesPlugins()]
 };

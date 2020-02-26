@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iview</title>
+  <link href="./static/lib/iview/styles/iview.css" rel="stylesheet">
+  <script src="./static/lib/vue/vue.min.js"></script>
+  <script src="./static/lib/iview/iview.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <i-button @click="show">Click me!</i-button>
+    <Modal v-model="visible" title="Welcome">Welcome to ViewUI</Modal>
+  </div>
+</body>
+</html>
